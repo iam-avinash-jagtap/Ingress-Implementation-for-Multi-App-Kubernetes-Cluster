@@ -45,7 +45,7 @@ project-root/
 ```
 
 ## 🛠️ Project Architecture:
-
+![Architecture](https://github.com/iam-avinash-jagtap/Ingress-Implementation-for-Multi-App-Kubernetes-Cluster/blob/master/Images/Architecture.png)
 
 ## 🏗️ Kind Cluster Creation  
 _In this project, you are going to set up a multi-node kind Kubernetes cluster on an AWS EC2 instance for local deployment simulation._
@@ -108,7 +108,7 @@ _In this step, you will build a Docker image for the Django Notes App and push i
 
 ## Step 3:- 📂 Set up nginx server and notes-app application  
 _In this step, you will deploy both the Nginx server and Django Notes App using Kubernetes Deployments and Services in a common namespace._  
-1. Clone repository - `git clone https://github.com/iam-avinash-jagtap/K8s-Manifest-Files`  
+1. Clone repository - `git clone https://github.com/iam-avinash-jagtap/Ingress-Implementation-for-Multi-App-Kubernetes-Cluster.git`  
 
 ### Deploy Nginx App 🌐  
 ```bash
@@ -150,6 +150,7 @@ kubectl get ing -n nginx
 
 kubectl get all -n nginx                
 ```
+![namespace-nginx](https://github.com/iam-avinash-jagtap/Ingress-Implementation-for-Multi-App-Kubernetes-Cluster/blob/master/Images/All%20Resources.png)
 
 ## Step 5:- 🔌 Expose the Ingress Port  
 _In this step, you will expose the Ingress controller port by mapping it to your host machine, enabling browser access to both applications._  
@@ -160,8 +161,12 @@ sudo -E kubectl port-forward service/ingress-nginx-controller -n ingress-nginx 8
 ## Step 6:- 🌍 Access the Applications  
 _In this step, you will access both applications in the browser using URL as defined in the Ingress rules._  
 - 📥 http://<public_IP>:8080/               → Notes App  
+
+![notes-app](https://github.com/iam-avinash-jagtap/Ingress-Implementation-for-Multi-App-Kubernetes-Cluster/blob/master/Images/Notes-app.png)
+   
 - 📄 http://<public_IP>:8080/nginx          → Nginx App  
 
+![nginx](https://github.com/iam-avinash-jagtap/Ingress-Implementation-for-Multi-App-Kubernetes-Cluster/blob/master/Images/Nginx-app.png)
 ---
 
 ## 🚀 Project Flow:  
